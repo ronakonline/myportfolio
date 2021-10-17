@@ -1,14 +1,32 @@
 import React from "react";
-import { Menu, MenuButton, MenuList, IconButton,Button } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList,MenuItem, IconButton,Button } from "@chakra-ui/react";
 import headerimg from "../headerimg.png";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 export default function header() {
+  const menuitems = [
+    {
+      name: "Skills",
+      link: "#1",
+    },
+    {
+      name: "Services",
+      link: "#services",
+    },
+    {
+      name: "Projects",
+      link: "#projects",
+    },
+    {
+      name: "Contact",
+      link: "#contact",
+    },
+  ];
   return (
     <>
       <div className="container-fluid head-container">
-        <nav className="navbar navbar-light">
-          <div className="container-fluid">
+        <nav className="navbar">
+          <div className="container-fluid menu-container">
             <span className="navbar-brand mb-0 h1">Ronak Pareek</span>
             <Menu>
               <MenuButton
@@ -17,7 +35,13 @@ export default function header() {
                 icon={<HamburgerIcon />}
                 variant="outline"
               />
-              <MenuList></MenuList>
+              <MenuList>
+                {menuitems.map((item) => (
+                  <MenuItem minH="48px" color="black">
+                   {item.name}
+                  </MenuItem>
+                ))}
+              </MenuList>
             </Menu>
           </div>
         </nav>
