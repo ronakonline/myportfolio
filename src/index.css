@@ -168,10 +168,10 @@ table td {
 .service-container {
   display: block;
   position: relative;
-  height: 500px;
   width: 100% !important;
   color:white;
   background: #0C0C0C;
+  padding-bottom: 64px;
 }
 
 
