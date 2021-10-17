@@ -1,6 +1,6 @@
 import React from "react";
-import {Menu, MenuButton, MenuList,IconButton,} from "@chakra-ui/react";
-
+import { Menu, MenuButton, MenuList, IconButton,Button } from "@chakra-ui/react";
+import headerimg from "../headerimg.png";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 export default function header() {
@@ -22,16 +22,22 @@ export default function header() {
           </div>
         </nav>
 
-        <div className="row">
-          <div className="shape">
-            <div className="col-12 head-text">
-              <span>Hey! I am Ronak,</span>
-              <br />
-              <span>I build web related projects that</span>
-              <br />
-              <span>are useful to my clients.</span>
-            </div>
+        <div className="row wrapper">
+          <div className="shape"></div>
+          <div className="header-img fade-in">
+            <img src={headerimg} alt="header" />
           </div>
+          <div className="col-12 head-text">
+            <span>Hey! I am Ronak,</span>
+            <br />
+            <span>I build web related projects that</span>
+            <br />
+            <span>are useful to my clients.</span>
+            <br/>
+            <Button className="contact-btn" size="lg" onClick={() => alert('hi')} >Contact</Button>
+          </div>
+            
+         
         </div>
       </div>
       <svg
