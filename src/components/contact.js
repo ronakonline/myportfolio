@@ -38,16 +38,16 @@ export default function contact() {
       overflow="hidden"
     >
       <Flex>
-        <Box bg="#02054B" color="white" borderRadius="lg" m={[0, 0, 16]} p={[3,5,16]} maxW={["sm","md","full"]}>
+        <Box bg="#02054B" color="white" borderRadius="lg" m={[5, 5, 16]} p={[3,5,16]} maxW={["sm","md","full"]}>
           <Box>
             <Wrap spacing={[5, 5, 40]}>
               <WrapItem>
                 <Box>
                   <Heading>Contact</Heading>
-                  <Text mt={5} color="gray.500">
+                  <Text mt={[3,5,5]} color="gray.500">
                     Fill up the form below to get in touch with me
                   </Text>
-                  <Box mt={10} py={10}>
+                  <Box mt={[0,0,10]} py={[5,8,10]}>
                     <VStack pl={0} spacing={3} alignItems="flex-start">
                       <Button
                         size="md"
@@ -84,7 +84,7 @@ export default function contact() {
                       </Button>
                     </VStack>
                   </Box>
-                  <HStack mt={10} spacing={5} px={5} alignItems="flex-start">
+                  <HStack mt={[0,0,10]} spacing={5} px={5} alignItems="flex-start">
                     <IconButton
                       aria-label="facebook"
                       variant="ghost"

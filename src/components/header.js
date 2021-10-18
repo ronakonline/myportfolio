@@ -50,6 +50,7 @@ export default function header() {
           <div className="shape"></div>
           <div className="header-img fade-in">
             <img src={headerimg} alt="header" />
+            
           </div>
           <div className="col-12 head-text">
             <span>Hey! I am Ronak,</span>
