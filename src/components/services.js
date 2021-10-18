@@ -3,12 +3,9 @@ import {
   Container,
   Heading,
   Box,
-  Center,
   List,
   ListItem,
   ListIcon,
-  Grid,
-  Flex,
   Wrap,
   WrapItem,
 } from "@chakra-ui/layout";
