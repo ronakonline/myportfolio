@@ -1,0 +1,9 @@
+
+
+.parallax-effect {
+  transform-style: preserve-3d;
+}
+
+.inner-element {
+    transform: translateZ(60px);
+  }

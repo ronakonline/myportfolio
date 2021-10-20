@@ -47,7 +47,7 @@ export default function header() {
         </nav>
 
         <div className="row wrapper">
-          <div className="shape"></div>
+          {/* <div className="shape"></div> */}
           <div className="header-img fade-in">
             <img src={headerimg} alt="header" />
             
