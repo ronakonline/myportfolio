@@ -1,58 +1,60 @@
-import React from "react";
-import {
-  Container,
-  Heading,
-  Text,
-  Box,
-  Table,
-  Tbody,
-  Tr,
-  Td,
-} from "@chakra-ui/react";
+import "../framer.css";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { initialTabs as tabs } from "./ingredients";
+import { Grid,Box } from "@chakra-ui/layout";
 
-export default function skills() {
-    const skills = [
-        {
-            name: "Front-end",
-            values: "HTML, CSS, JAVASCRIPT, REACT, REACT NATIVE"
-        },
-        {
-            name: "Back-end",
-            values: "PHP, CODEIGNITER, LARAVEL, NODEJS, EXPRESSJS"
-        },
-        {
-            name: "Database",
-            values: "MYSQL, MONGODB"
-        },
-        {
-            name: "Others",
-            values: "GITHUB, AWS, SEO, TESTING, REST API, GRAPHQL, ETC"
-        }
-    ];
+export default function App() {
+
+  const [selectedTab, setSelectedTab] = useState(tabs[0]);
+
+
   return (
-      <>
-    <Container className="skills-container" maxW="container.xl" >
-      <Heading as="h2" size="xl" id="1">
-        Technologies & Frameworks
-      </Heading>
-      <Text fontSize="xl" className="subheading">
-        Here are some of my skills.
-      </Text>
-
-      <Box borderWidth="1px" borderRadius="lg" boxShadow="lg" overflow="hidden" maxW="xlg" mt={10}>
-        <Table variant="simple" size="lg" colorScheme="whatsapp">
-          <Tbody>
-            {skills.map((skill, index) => (
-                <Tr key={index}>
-                    <Td><Text fontSize="lg">{skill.name}</Text></Td>
-                    <Td><Text fontSize="lg">{skill.values}</Text></Td>
-                </Tr>
+    <div className="skills-container-main">
+      <div className="window">
+        <nav className="tab-nav">
+          <ul className="ul-list">
+            {tabs.map((item,index) => (
+              <li
+                key={item.label}
+                className={
+                  item === selectedTab ? "selected list-item" : "list-item"
+                }
+                onClick={() => setSelectedTab(item)}
+              >
+                {`${item.label}`}
+                {item === selectedTab ? (
+                  <motion.div className="underline" layoutId="underline" />
+                ) : null}
+              </li>
             ))}
-          </Tbody>
-        </Table>
-      </Box>
-    </Container>
-   
-   </>
+          </ul>
+        </nav>
+        <main className="main-container">
+          <AnimatePresence exitBeforeEnter>
+            <motion.div
+              key={selectedTab ? selectedTab.label : "empty"}
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.15 }}
+            >
+              {/* {selectedTab ? selectedTab.icon : "😋"}
+              <span>{selectedTab.icon}</span> */}
+              <Grid templateColumns="repeat(5, 1fr)" gap={6} my={5}>
+              {selectedTab.icon.map((skill,index)=>(
+                
+                <Box key={index} mx={5}>
+                <img src={skill.img} alt="icon" height="64px" width="64px" />
+                {/* <p className="skilltitle">{skill.title}</p> */}
+                </Box>
+               
+              ))}
+               </Grid>
+            </motion.div>
+          </AnimatePresence>
+        </main>
+      </div>
+    </div>
   );
 }

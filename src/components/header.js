@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MenuButton, MenuList,MenuItem, IconButton,Button } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList,MenuItem, IconButton,Button,Box } from "@chakra-ui/react";
 import headerimg from "../headerimg.png";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -24,10 +24,9 @@ export default function header() {
   ];
   return (
     <>
-      <div className="container-fluid head-container">
-        <nav className="navbar">
+    <nav className="navbar">
           <div className="container-fluid menu-container">
-            <span className="navbar-brand mb-0 h1">Ronak Pareek</span>
+            <Box className="navbar-brand" ml={3}>Ronak Pareek</Box>
             <Menu>
               <MenuButton
                 as={IconButton}
@@ -45,8 +44,10 @@ export default function header() {
             </Menu>
           </div>
         </nav>
+      <div className="container-fluid head-container">
+        
 
-        <div className="row wrapper">
+        <div className="row wrapper content-head">
           {/* <div className="shape"></div> */}
           <div className="header-img fade-in">
             <img src={headerimg} alt="header" />
@@ -65,7 +66,7 @@ export default function header() {
          
         </div>
       </div>
-      <svg
+      {/* <svg
         viewBox="0 0 1000 200"
         preserveAspectRatio="none"
         className="site-header-background"
@@ -82,7 +83,7 @@ export default function header() {
           fill="url(#header-gradient)"
           d="M-4,-4 L1004,-4 L1004,90 L804,90 L604,90 L404,90 L204,90 L-4,90 L-4,90 L-4,-4 Z"
         />
-      </svg>
+      </svg> */}
     </>
   );
 }

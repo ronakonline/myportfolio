@@ -26,20 +26,34 @@ body::-webkit-scrollbar {
 }
 
 .head-container{
-  height: 500px;
+  height: 100vh;
+  width: 100vw;
   background: #0C0C0C;
   display: block;
   z-index: 1;
+  
+  position: relative;
 }
 
+
+
 .head-text{
-  position: absolute;
+  /* position: absolute; */
   z-index:2;
   font-size: 50px;
   font-weight: bold;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   padding-left: 25px;
-  padding-top: 140px;
+  padding-top: 67px;
+
+}
+
+.content-head{
+  height: 90vh;
+  width: 100vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 768px) {
@@ -188,7 +202,6 @@ table td {
   width: 800px;
   height: 100%;
   left: 650px;
-  top: 30px;
   z-index: 4 ;
   overflow: hidden;
 	transform: translatey(0px);

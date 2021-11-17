@@ -26,7 +26,7 @@ export default function services() {
       <Container
         className=" service-container"
         maxW="full"
-        mt={100}
+      
         px={{"base":0,"lg":16}}
       >
         <Heading pt={16} pl={[6, 4, 0]}>
