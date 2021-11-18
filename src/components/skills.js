@@ -42,7 +42,7 @@ export default function App() {
               >
                 <Grid templateColumns="repeat(5, 1fr)" gap={6} my={5}>
                   {selectedTab.icon.map((skill, index) => (
-                    <Box key={index} mx={5}>
+                    <Box key={index} mx={5} cursor="pointer">
                       <Tooltip label={skill.title} placement="right-end">
                         <img
                           src={skill.img}
