@@ -31,6 +31,7 @@ body::-webkit-scrollbar {
   width: 100vw;
   background: #0C0C0C;
   justify-items: center;
+  flex-wrap: wrap;
 }
 
 .head-container  > div {

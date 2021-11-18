@@ -20,7 +20,10 @@
   padding-right: 50px;
   padding-top:50px;
   font-family: "eurostile", sans-serif;
+  text-decoration: underline;
 }
+
+
 
 .window {
     width: 780px;

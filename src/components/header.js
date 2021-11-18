@@ -61,8 +61,8 @@ export default function header() {
       </nav>
       <div className="head-container">
         <Flex >
-            <Flex flexDirection="column" justifyContent="center" px={16} pb={32}>
-                <Text fontSize="4xl" fontWeight="bold">
+            <Flex flexDirection="column" justifyContent="center" wrap="wrap"  px={16} pb={32}>
+                <Text fontSize="5xl" fontWeight="bold">
                 Hey! I am Ronak,
                 </Text>
                 <Text fontSize="2xl" fontWeight="bold"  p="0px">
