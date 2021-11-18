@@ -1,7 +1,20 @@
 import React from "react";
-import { Menu, MenuButton, MenuList,MenuItem, IconButton,Button,Box } from "@chakra-ui/react";
-import headerimg from "../headerimg.png";
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  IconButton,
+  Button,
+  Box,
+  Text,
+  Center,
+  Square,
+  Image
+} from "@chakra-ui/react";
+import headerimg from "../skills-images/headerimg.png";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Flex, Spacer } from "@chakra-ui/react"
 
 export default function header() {
   const menuitems = [
@@ -24,49 +37,47 @@ export default function header() {
   ];
   return (
     <>
-    <nav className="navbar">
-          <div className="container-fluid menu-container">
-            <Box className="navbar-brand" ml={3}>Ronak Pareek</Box>
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                aria-label="Options"
-                icon={<HamburgerIcon />}
-                variant="outline"
-              />
-              <MenuList>
-                {menuitems.map((item) => (
-                  <MenuItem minH="48px" color="black">
-                   {item.name}
-                  </MenuItem>
-                ))}
-              </MenuList>
-            </Menu>
-          </div>
-        </nav>
-      <div className="container-fluid head-container">
-        
-
-        <div className="row wrapper content-head">
-          {/* <div className="shape"></div> */}
-          <div className="header-img fade-in">
-            <img src={headerimg} alt="header" />
-            
-          </div>
-          <div className="col-12 head-text">
-            <span>Hey! I am Ronak,</span>
-            <br />
-            <span>I build web related projects that</span>
-            <br />
-            <span>are useful to my clients.</span>
-            <br/>
-            <Button className="contact-btn" size="lg" onClick={() => alert('hi')} >Contact</Button>
-          </div>
-            
-         
+      <nav className="navbar">
+        <div className="container-fluid menu-container">
+          <Box className="navbar-brand" ml={3}>
+            Ronak Pareek
+          </Box>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+            />
+            <MenuList>
+              {menuitems.map((item) => (
+                <MenuItem minH="48px" color="black">
+                  {item.name}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </Menu>
         </div>
+      </nav>
+      <div className="head-container">
+        <Flex >
+            <Flex flexDirection="column" justifyContent="center" px={16} pb={32}>
+                <Text fontSize="4xl" fontWeight="bold">
+                Hey! I am Ronak,
+                </Text>
+                <Text fontSize="2xl" fontWeight="bold"  p="0px">
+                   
+                    Im self taught web developer and <br/>
+                    I love learning new things.
+                </Text>
+                <Button className="contact-btn" size="lg" onClick={() => alert('hi')}  colorScheme="teal" variant="outline">Contact</Button>
+            </Flex>
+            <Box className="fade-in floating" pb="70px" >
+               <Image src={headerimg} alt="header" height="100%" width="800px" />
+            </Box>
+        </Flex>
       </div>
-      {/* <svg
+      <svg
         viewBox="0 0 1000 200"
         preserveAspectRatio="none"
         className="site-header-background"
@@ -83,7 +94,7 @@ export default function header() {
           fill="url(#header-gradient)"
           d="M-4,-4 L1004,-4 L1004,90 L804,90 L604,90 L404,90 L204,90 L-4,90 L-4,90 L-4,-4 Z"
         />
-      </svg> */}
+      </svg>
     </>
   );
 }
