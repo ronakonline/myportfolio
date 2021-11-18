@@ -3,14 +3,32 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { initialTabs as tabs } from "./ingredients";
 import { Grid, Box } from "@chakra-ui/layout";
-import { Tooltip } from "@chakra-ui/react";
+import { Tooltip, Text, useBreakpointValue, Heading } from "@chakra-ui/react";
 
 export default function App() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
     <>
-      <p className="skills-title">Skills</p>
+      <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} pl={16} mt={2}>
+        <Text
+          as={"span"}
+          position={"relative"}
+          color={"black"}
+          _after={{
+            content: "''",
+            width: "full",
+            height: useBreakpointValue({ base: "20%", md: "30%" }),
+            position: "absolute",
+            bottom: 1,
+            left: 0,
+            bg: "teal.400",
+            zIndex: -1,
+          }}
+        >
+          Skills
+        </Text>
+      </Heading>
       <div className="skills-container-main">
         <div className="window">
           <nav className="tab-nav">

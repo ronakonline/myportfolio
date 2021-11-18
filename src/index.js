@@ -8,6 +8,7 @@ import Services from './components/services';
 import Projects from './components/projects';
 import Contact from './components/contact';
 import Navbar from './components/navbar';
+import Footer from './components/footer';
 import { ChakraProvider } from "@chakra-ui/react"
 
 ReactDOM.render(
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Skills/>
     <Services/>
     <Contact/>
+    <Footer/>
   </ChakraProvider>,
   document.getElementById('root')
 );
