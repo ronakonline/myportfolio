@@ -11,27 +11,15 @@ body::-webkit-scrollbar {
   display: none; 
 }
 
-.navbar{
-  position: relative;
-  display: block;
-  background: #0C0C0C;
-  z-index: 99;
-}
 
-.navbar-brand{
-  color: white !important;
-  font-size: 1.3em;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
 
 .head-container{
-  display: flex;
-  height: 100vh;
+  display: block;
+  /* display: flex; */
+  /* height: 100vh; */
   width: 100vw;
   background: #0C0C0C;
-  justify-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .head-container  > div {
