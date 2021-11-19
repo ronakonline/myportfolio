@@ -29,6 +29,9 @@ export default function App() {
           Skills
         </Text>
       </Heading>
+      <Text fontSize="lg" pl={16} className="subheading">
+        Im too lazy to make good UI. So here's a simple list.
+      </Text>
       <div className="skills-container-main">
         <div className="window">
           <nav className="tab-nav">

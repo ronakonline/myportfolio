@@ -39,7 +39,7 @@ const Header = () => {
         >
           <Box
             position="absolute"
-            bottom="200px"
+            bottom="220px"
             left={2}
             display={["none", "none", "none", "block"]}
           >
@@ -52,32 +52,37 @@ const Header = () => {
               autoplay
             ></lottie-player>
           </Box>
-          <chakra.h1
-            mb={6}
-            fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
-            fontWeight="bold"
-            color={useColorModeValue("brand.600", "gray.300")}
-            lineHeight="shorter"
+          <Box
+            position={["relative", "relative", "relative", "absolute"]}
+            bottom={["0", "0", "0", "140px"]}
           >
-            I am Ronak,
-          </chakra.h1>
-          <chakra.p
-            pr={{ base: 0, lg: 16 }}
-            mb={4}
-            fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
-            color={useColorModeValue("brand.600", "gray.400")}
-            letterSpacing="wider"
-          >
-            Im self taught web developer and <br />I love learning new things.
-          </chakra.p>
-          <Button
-            size="lg"
-            onClick={() => alert("hi")}
-            colorScheme="teal"
-            variant="outline"
-          >
-            Contact
-          </Button>
+            <chakra.h1
+              mb={6}
+              fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
+              fontWeight="bold"
+              color={useColorModeValue("brand.600", "gray.300")}
+              lineHeight="shorter"
+            >
+              I am Ronak,
+            </chakra.h1>
+            <chakra.p
+              pr={{ base: 0, lg: 16 }}
+              mb={4}
+              fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
+              color={useColorModeValue("brand.600", "gray.400")}
+              letterSpacing="wider"
+            >
+              Im self taught web developer and <br />I love learning new things.
+            </chakra.p>
+            <Button
+              size="lg"
+              onClick={() => alert("hi")}
+              colorScheme="teal"
+              variant="outline"
+            >
+              Contact
+            </Button>
+          </Box>
         </Flex>
         <Box>
           <lottie-player

@@ -15,7 +15,8 @@ import {
   chakra,
   Flex,
   Link,
-  SimpleGrid
+  SimpleGrid,
+  useBreakpointValue
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -70,8 +71,24 @@ export default function Projects() {
 
   return (
     <Container className="skills-container" my={16} maxW="container.xl">
-      <Heading as="h2" size="xl" id="1">
-        Projects
+        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}  mt={2}>
+        <Text
+          as={"span"}
+          position={"relative"}
+          color={"black"}
+          _after={{
+            content: "''",
+            width: "full",
+            height: useBreakpointValue({ base: "20%", md: "30%" }),
+            position: "absolute",
+            bottom: 1,
+            left: 0,
+            bg: "teal.400",
+            zIndex: -1,
+          }}
+        >
+          Projects
+        </Text>
       </Heading>
       <Text fontSize="xl" className="subheading">
         Here are some of my projects.

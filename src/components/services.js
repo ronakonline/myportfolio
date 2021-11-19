@@ -9,13 +9,14 @@ import {
   Wrap,
   WrapItem,
   Text,
-} from "@chakra-ui/layout";
+  useBreakpointValue
+} from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
 
 import Tilt from "react-parallax-tilt";
 import "./services.css";
 
-export default function services() {
+export default function Services() {
   const services = [
     "Website Development",
     "App Development",
@@ -29,9 +30,25 @@ export default function services() {
       
         px={{"base":0,"lg":16}}
       >
-        <Heading pt={16} pl={[6, 4, 0]}>
+            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}  mt={2} pt={8}>
+        <Text
+          as={"span"}
+          position={"relative"}
+          color={"white"}
+          _after={{
+            content: "''",
+            width: "full",
+            height: useBreakpointValue({ base: "20%", md: "30%" }),
+            position: "absolute",
+            bottom: 1,
+            left: 0,
+            bg: "white",
+            zIndex: -1,
+          }}
+        >
           Services
-        </Heading>
+        </Text>
+      </Heading>
         <Wrap display="flex" justify="center">
           <WrapItem>
             <Tilt perspective={500} className="parallax-effect">
