@@ -16,33 +16,72 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import {
   MdPhone,
   MdEmail,
   MdLocationOn,
   MdFacebook,
   MdOutlineEmail,
-} from 'react-icons/md';
-import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
+} from "react-icons/md";
+import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
 
 export default function contact() {
   return (
-    <Container bg="#9DC4FB" maxW="full" mt={0} centerContent overflow="hidden">
+    <Container
+      bg="gray.50"
+      maxW="full"
+      mt={0}
+      centerContent
+      overflow="hidden"
+      position="relative"
+    >
+      <Box
+        position="absolute"
+        left={5}
+        display={["none", "none", "none", "block"]}
+      >
+        <lottie-player
+          src="https://assets1.lottiefiles.com/private_files/lf30_cc9cxym5.json"
+          background="transparent"
+          speed="1"
+          style={{ height: "250px", width: "250px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </Box>
+
+    
+      <Box
+        position="absolute"
+        left={72}
+        bottom={20}
+        display={["none", "none", "none", "block"]}
+      >
+        <lottie-player
+          src="https://assets1.lottiefiles.com/packages/lf20_rvqjxeql.json"
+          background="transparent"
+          speed="1"
+          style={{ height: "250px", width: "250px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </Box>
       <Flex>
         <Box
           bg="#02054B"
           color="white"
           borderRadius="lg"
           m={[5, 5, 16]}
-          p={[3, 5, 16]}>
+          p={[3, 5, 16]}
+        >
           <Box>
             <Wrap spacing={[10, 0, 20]}>
               <WrapItem>
                 <Box>
                   <Heading>Contact</Heading>
                   <Text mt={[3, 5, 5]} color="gray.500">
-                  Fill up the form below to get in touch with me
+                    Fill up the form below to get in touch with me
                   </Text>
                   <Box mt={[0, 0, 10]} py={[5, 8, 10]}>
                     <VStack pl={0} spacing={3} alignItems="flex-start">
@@ -52,8 +91,9 @@ export default function contact() {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdPhone color="#1970F1" size="20px" />}>
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                      >
                         +91-988888888
                       </Button>
                       <Button
@@ -62,8 +102,9 @@ export default function contact() {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}>
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                      >
                         hello@abc.com
                       </Button>
                       <Button
@@ -72,8 +113,9 @@ export default function contact() {
                         width="200px"
                         variant="ghost"
                         color="#DCE2FF"
-                        _hover={{ border: '2px solid #1C6FEB' }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
+                        _hover={{ border: "2px solid #1C6FEB" }}
+                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                      >
                         Karnavati, India
                       </Button>
                     </VStack>
@@ -82,13 +124,14 @@ export default function contact() {
                     mt={[0, 0, 10]}
                     spacing={5}
                     px={5}
-                    alignItems="flex-start">
+                    alignItems="flex-start"
+                  >
                     <IconButton
                       aria-label="facebook"
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
+                      _hover={{ bg: "#0D74FF" }}
                       icon={<MdFacebook size="28px" />}
                     />
                     <IconButton
@@ -96,7 +139,7 @@ export default function contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
+                      _hover={{ bg: "#0D74FF" }}
                       icon={<BsGithub size="28px" />}
                     />
                     <IconButton
@@ -104,7 +147,7 @@ export default function contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: '#0D74FF' }}
+                      _hover={{ bg: "#0D74FF" }}
                       icon={<BsDiscord size="28px" />}
                     />
                   </HStack>
@@ -143,7 +186,8 @@ export default function contact() {
                           variant="solid"
                           bg="#0D74FF"
                           color="white"
-                          _hover={{}}>
+                          _hover={{}}
+                        >
                           Send Message
                         </Button>
                       </FormControl>

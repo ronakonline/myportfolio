@@ -45,7 +45,9 @@ import {
     return (
       <Box
         bg={useColorModeValue('gray.50', 'gray.900')}
-        color={useColorModeValue('gray.700', 'gray.200')}>
+        color={useColorModeValue('gray.700', 'gray.200')}
+        borderTop={'1px solid black'}
+        >
         <Container
           as={Stack}
           maxW={'6xl'}
