@@ -33,7 +33,7 @@ export default function App() {
         Im too lazy to make good UI. So here's a simple list.
       </Text>
       <Box className="skills-container-main" mt={12}>
-        <Box className="window" mr={{ lg:"200px" }} pl={0}>
+        <Box className="window" pl={0}>
           <nav className="tab-nav">
             <ul className="ul-list">
               {tabs.map((item, index) => (
