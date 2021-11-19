@@ -25,12 +25,11 @@ export default function Services() {
   return (
     <>
       <Container
-        className=" service-container"
-        maxW="full"
-      
+        className="service-container"
         px={{"base":0,"lg":16}}
+        maxWidth="100%"
       >
-            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}  mt={2} pt={8}>
+            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} pt={8}>
         <Text
           as={"span"}
           position={"relative"}
