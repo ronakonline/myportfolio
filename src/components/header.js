@@ -56,6 +56,7 @@ const Header = () => {
           </Box>
           <Box
             className="child"
+            mt={{ base: 16, lg: 0 }}
           >
             <chakra.h1
               mb={6}
@@ -69,9 +70,9 @@ const Header = () => {
             <chakra.p
               
               mb={4}
-              fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
+              fontSize={{ base: "xl", md: "2xl", lg: "2xl" }}
               color={useColorModeValue("brand.600", "gray.400")}
-              letterSpacing="wider"
+              letterSpacing="wide"
             >
               Im self taught web developer and <br />I love learning new things.
             </chakra.p>

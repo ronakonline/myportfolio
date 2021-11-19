@@ -19,6 +19,7 @@ import {
   useBreakpointValue
 } from "@chakra-ui/react";
 import { useState } from "react";
+import Tilt from "react-parallax-tilt";
 
 function filterProjects(projects, filter) {
   if (filter === "all") {
@@ -132,6 +133,7 @@ export default function Projects() {
             shadow="md"
             borderRadius="xl"
           >
+            <Tilt perspective={1000}    glareEnable="true" className="parallax-effect">
             <Image
               src={project.image}
               alt={project.name}
@@ -141,6 +143,7 @@ export default function Projects() {
               borderRadius="lg"
               shadow="lg"
             />
+            </Tilt>
             <Heading as="h3" size="lg" mt={4} color="teal.600" >
               {project.name}
             </Heading>
