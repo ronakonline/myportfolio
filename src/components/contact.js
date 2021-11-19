@@ -25,6 +25,7 @@ import {
   MdOutlineEmail,
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
+import { Link,Router } from "react-router-dom";
 
 export default function contact() {
   return (
@@ -98,18 +99,18 @@ export default function contact() {
                         _hover={{ border: "2px solid #1C6FEB" }}
                         leftIcon={<MdPhone color="#1970F1" size="20px" />}
                       >
-                        +91-988888888
+                        +91-9265074781
                       </Button>
                       <Button
                         size="md"
                         height="48px"
-                        width="200px"
+                        width="300px"
                         variant="ghost"
                         color="#DCE2FF"
                         _hover={{ border: "2px solid #1C6FEB" }}
                         leftIcon={<MdEmail color="#1970F1" size="20px" />}
                       >
-                        hello@abc.com
+                        ronakpareek280@gmail.com
                       </Button>
                       <Button
                         size="md"
@@ -137,6 +138,7 @@ export default function contact() {
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<MdFacebook size="28px" />}
+                      onClick={event =>  window.open("https://www.facebook.com/Roonnaakk/", '_blank') }
                     />
                     <IconButton
                       aria-label="github"
@@ -145,6 +147,7 @@ export default function contact() {
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsGithub size="28px" />}
+                      onClick={event =>  window.open("https://github.com/ronakonline", '_blank') }
                     />
                     <IconButton
                       aria-label="discord"
@@ -153,6 +156,7 @@ export default function contact() {
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsDiscord size="28px" />}
+                      onClick={event =>  window.open("https://discordapp.com/users/404316876999622656", '_blank') }
                     />
                   </HStack>
                 </Box>

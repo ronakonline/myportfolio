@@ -7,12 +7,13 @@ import {
   SimpleGrid,
   Button,
 } from "@chakra-ui/react";
+import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
   return (
     <>
       <SimpleGrid
-      id="home"
+        id="home"
         columns={{ base: 1, md: 2 }}
         spacing={0}
         _after={{
@@ -55,10 +56,7 @@ const Header = () => {
               autoplay
             ></lottie-player>
           </Box>
-          <Box
-            className="child"
-            mt={{ base: 16, lg: 0 }}
-          >
+          <Box className="child" mt={{ base: 16, lg: 0 }}>
             <chakra.h1
               mb={6}
               fontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
@@ -69,7 +67,6 @@ const Header = () => {
               I am Ronak,
             </chakra.h1>
             <chakra.p
-              
               mb={4}
               fontSize={{ base: "xl", md: "2xl", lg: "2xl" }}
               color={useColorModeValue("brand.600", "gray.400")}
@@ -77,14 +74,22 @@ const Header = () => {
             >
               Im self taught web developer and <br />I love learning new things.
             </chakra.p>
-            <Button
-              size="lg"
-              onClick={() => alert("hi")}
-              colorScheme="teal"
-              variant="outline"
+            <ScrollLink
+              to="contact"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={1500}
             >
-              Contact
-            </Button>
+              <Button
+                size="lg"
+                colorScheme="teal"
+                variant="outline"
+              >
+                Contact
+              </Button>
+            </ScrollLink>
           </Box>
         </Flex>
         <Box>
