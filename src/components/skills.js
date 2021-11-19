@@ -9,7 +9,7 @@ export default function App() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <Container className="skills-container" maxW="container.xl" p={0}>
+    <Container className="skills-container" maxW="container.xl" p={0} id="skills">
       <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} px={4}>
         <Text
           as={"span"}

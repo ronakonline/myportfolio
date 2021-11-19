@@ -71,7 +71,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <Container className="skills-container" my={16} maxW="container.xl">
+    <Container id="work" className="skills-container" my={16} maxW="container.xl">
         <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}  mt={2}>
         <Text
           as={"span"}

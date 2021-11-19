@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Simple() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -22,26 +23,36 @@ export default function Simple() {
   const Links = ["Home", "Skills", "Services", "Work", "Contact"];
 
   const NavLink = ({ children }: { children: ReactNode }) => (
-    <Link
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "underline",
-        color: "teal.400",
-      }}
-      href={"#"}
-      color={activeLink === children ? "teal.400" : null}
-      textDecoration={activeLink === children ? "underline" : "none"}
-      fontSize={["sm", "md", "lg"]}
+    <ScrollLink
+      to={children.toLowerCase()}
+      activeClass="active"
+      spy={true}
+      smooth={true}
+      offset={-60}
+      duration={1500}
+      onClick={() => setActiveLink(children)}
     >
-      {children}
-    </Link>
+      <Link
+        px={2}
+        py={1}
+        rounded={"md"}
+        _hover={{
+          textDecoration: "underline",
+          color: "teal.400",
+        }}
+        href={"#"}
+        color={activeLink === children ? "teal.400" : null}
+        textDecoration={activeLink === children ? "underline" : "none"}
+        fontSize={["sm", "md", "lg"]}
+      >
+        {children}
+      </Link>
+    </ScrollLink>
   );
   return (
     <>
-      <Box bg="#0C0C0C" px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+      <Box bg="#0C0C0C" px={4} as="header" position="fixed" zIndex={1} w="100%" >
+        <Flex h={16} alignItems={"center"}  justifyContent={"space-between"}>
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}

@@ -12,6 +12,7 @@ const Header = () => {
   return (
     <>
       <SimpleGrid
+      id="home"
         columns={{ base: 1, md: 2 }}
         spacing={0}
         _after={{

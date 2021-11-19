@@ -25,6 +25,7 @@ export default function Services() {
   return (
     <>
       <Container
+        id="services"
         className="service-container"
         px={{"base":0,"lg":16}}
         maxWidth="100%"

@@ -9,7 +9,7 @@ import Projects from './components/projects';
 import Contact from './components/contact';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider,Container } from "@chakra-ui/react"
 
 ReactDOM.render(
   <ChakraProvider>

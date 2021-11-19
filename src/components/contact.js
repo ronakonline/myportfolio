@@ -29,6 +29,7 @@ import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
 export default function contact() {
   return (
     <Container
+      id="contact"
       bg="gray.50"
       maxW="full"
       mt={0}
