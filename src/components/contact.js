@@ -38,7 +38,8 @@ export default function contact() {
     >
       <Box
         position="absolute"
-        left={5}
+        translateX="50%"
+        left="3%"
         display={["none", "none", "none", "block"]}
       >
         <lottie-player
@@ -54,8 +55,10 @@ export default function contact() {
     
       <Box
         position="absolute"
-        left={72}
-        bottom={20}
+        translateX="50%"
+        translateY="50%"
+        bottom="12%"
+        left="23%"
         display={["none", "none", "none", "block"]}
       >
         <lottie-player
