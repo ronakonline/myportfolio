@@ -2,15 +2,15 @@ import "../framer.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { initialTabs as tabs } from "./ingredients";
-import { Grid, Box } from "@chakra-ui/layout";
-import { Tooltip, Text, useBreakpointValue, Heading } from "@chakra-ui/react";
+import { Grid, Box, Container, SimpleGrid } from "@chakra-ui/layout";
+import { Tooltip, Text, useBreakpointValue, Heading, Image } from "@chakra-ui/react";
 
 export default function App() {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <>
-      <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} pl={16} mt={2}>
+    <Container className="skills-container" maxW="container.xl" p={0}>
+      <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} px={4}>
         <Text
           as={"span"}
           position={"relative"}
@@ -29,11 +29,11 @@ export default function App() {
           Skills
         </Text>
       </Heading>
-      <Text fontSize="lg" pl={16} className="subheading">
+      <Text fontSize="lg"  className="subheading" px={4}>
         Im too lazy to make good UI. So here's a simple list.
       </Text>
-      <div className="skills-container-main">
-        <div className="window">
+      <Box className="skills-container-main" mt={12}>
+        <Box className="window" mr={{ lg:"200px" }} pl={0}>
           <nav className="tab-nav">
             <ul className="ul-list">
               {tabs.map((item, index) => (
@@ -44,7 +44,7 @@ export default function App() {
                   }
                   onClick={() => setSelectedTab(item)}
                 >
-                  {`${item.label}`}
+                  <Text fontSize={{ base:"sm" , lg:"lg" }} >{`${item.label}`}</Text>
                   {item === selectedTab ? (
                     <motion.div className="underline" layoutId="underline" />
                   ) : null}
@@ -61,25 +61,29 @@ export default function App() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.15 }}
               >
-                <Grid templateColumns="repeat(5, 1fr)" gap={6} my={5}>
+                <SimpleGrid columns={[3, 4, 5]} gap={4} my={5}>
                   {selectedTab.icon.map((skill, index) => (
-                    <Box key={index} mx={5} cursor="pointer">
+                    <Box key={index} mx={{"base":"2","lg":"5"}} cursor="pointer"
+                        h={{ base: "80%", md: "64px" , lg:"64px" }}
+                        w={{ base: "80%", md: "64px" , lg:"64px"}}>
                       <Tooltip label={skill.title} placement="right-end">
-                        <img
+                        <Box>
+                        <Image
                           src={skill.img}
                           alt="icon"
-                          height="64px"
-                          width="64px"
+                          h={{ base: "80%", md: "64px" , lg:"64px" }}
+                          w={{ base: "80%", md: "64px" , lg:"64px"}}
                         />
+                        </Box>
                       </Tooltip>
                     </Box>
                   ))}
-                </Grid>
+                </SimpleGrid>
               </motion.div>
             </AnimatePresence>
           </main>
-        </div>
-      </div>
-    </>
+        </Box>
+      </Box>
+    </Container>
   );
 }
