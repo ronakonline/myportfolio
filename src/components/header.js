@@ -37,7 +37,12 @@ const Header = () => {
           px={{ base: 4, lg: 20 }}
           py={24}
         >
-          <Box position="absolute" bottom="200px" left={2}>
+          <Box
+            position="absolute"
+            bottom="200px"
+            left={2}
+            display={["none", "none", "none", "block"]}
+          >
             <lottie-player
               src="https://assets6.lottiefiles.com/packages/lf20_1wyqjumb.json"
               background="transparent"
