@@ -36,12 +36,14 @@ const Header = () => {
           bg="#0C0C0C"
           px={{ base: 4, lg: 20 }}
           py={24}
+          position="relative"
         >
           <Box
-            position="absolute"
-            bottom="220px"
-            left={2}
+            // position="absolute"
+            // bottom="220px"
+            // left={2}
             display={["none", "none", "none", "block"]}
+            className="child1"
           >
             <lottie-player
               src="https://assets6.lottiefiles.com/packages/lf20_1wyqjumb.json"
@@ -53,8 +55,7 @@ const Header = () => {
             ></lottie-player>
           </Box>
           <Box
-            position={["relative", "relative", "relative", "absolute"]}
-            bottom={["0", "0", "0", "140px"]}
+            className="child"
           >
             <chakra.h1
               mb={6}
@@ -66,7 +67,7 @@ const Header = () => {
               I am Ronak,
             </chakra.h1>
             <chakra.p
-              pr={{ base: 0, lg: 16 }}
+              
               mb={4}
               fontSize={{ base: "2xl", md: "2xl", lg: "2xl" }}
               color={useColorModeValue("brand.600", "gray.400")}

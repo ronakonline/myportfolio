@@ -141,6 +141,27 @@ body::-webkit-scrollbar {
   padding-left: 5px;
 }
 
+.child {
+  position: absolute;
+  top: 48%;  /* position the top  edge of the element at the middle of the parent */
+  left: 40%; /* position the left edge of the element at the middle of the parent */
+  -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.child1 {
+  position: absolute;
+  top: 28%;  /* position the top  edge of the element at the middle of the parent */
+  left: 30%; /* position the left edge of the element at the middle of the parent */
+  -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 table td {
   border-right: 1px solid #000;
 }
