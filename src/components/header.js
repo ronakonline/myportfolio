@@ -75,8 +75,8 @@ const Header = () => {
    >
      <defs>
        <linearGradient id="header-gradient" x2="0%" y2="100%">
-         <stop offset="0%" stop-color="#0C0C0C" />
-         <stop offset="100%" stop-color="#0C0C0C" />
+         <stop offset="0%" stopColor="#0C0C0C" />
+         <stop offset="100%" stopColor="#0C0C0C" />
        </linearGradient>
      </defs>
      <path

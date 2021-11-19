@@ -6,71 +6,149 @@ import {
   WrapItem,
   Box,
   Badge,
-} from "@chakra-ui/layout";
-import { Stack, Avatar } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react";
-import React from "react";
+  HStack,
+  Button,
+  Stack,
+  Image,
+  Tag,
+  TagLabel,
+  chakra,
+  Flex,
+  Link,
+  SimpleGrid
+} from "@chakra-ui/react";
+import { useState } from "react";
 
-export default function projects() {
+function filterProjects(projects, filter) {
+  if (filter === "all") {
+    return projects;
+  }
+  return projects.filter((projects) => projects.types.includes(filter));
+}
+
+export default function Projects() {
+  const [filter, setFilter] = useState("all");
+  const projects = [
+    {
+      name: "Project 1",
+      types: ["web", "mobile"],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      image: "https://source.unsplash.com/random",
+    },
+    {
+      name: "Project 2",
+      types: ["web", "codeigniter"],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      image: "https://source.unsplash.com/random",
+    },
+    {
+      name: "Project 3",
+      types: ["web", "mobile"],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      image: "https://source.unsplash.com/random",
+    },
+    {
+      name: "Project 4",
+      types: ["web", "mobile"],
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      image: "https://source.unsplash.com/random",
+    },
+  ];
+
+  const projectTypes = projects.reduce((acc, project) => {
+    project.types.forEach((type) => {
+      if (!acc.includes(type)) {
+        acc.push(type);
+      }
+    });
+    return acc;
+  }, []);
+
   return (
-    <Container className="skills-container" maxW="container.xl">
+    <Container className="skills-container" my={16} maxW="container.xl">
       <Heading as="h2" size="xl" id="1">
         Projects
       </Heading>
       <Text fontSize="xl" className="subheading">
         Here are some of my projects.
       </Text>
-      <Wrap mt={10}>
-        <WrapItem>
-          <Box
-            maxW={"445px"}
-            w={"full"}
-            boxShadow={"2xl"}
-            rounded={"md"}
-            p={6}
-            overflow={"hidden"}
+      <HStack wrap="nowrap" justify="center" mt={{ base:8,md:0,lg:0 }}>
+        <Tag
+          colorScheme="teal"
+          borderRadius="full"
+          size="lg"
+          px={{ base: 4, md: 8 }}
+          variant={filter === "all" ? "solid" : "outline"}
+          onClick={() => setFilter("all")}
+          cursor="pointer"
+        >
+          <TagLabel fontWeight="semibold">All</TagLabel>
+        </Tag>
+        {projectTypes.map((type) => (
+          <Tag
+            key={type}
+            colorScheme="teal"
+            borderRadius="full"
+            size="lg"
+            px={{ base: 4, md: 8 }}
+            variant={filter === type ? "solid" : "outline"}
+            onClick={() => setFilter(type)}
+            cursor="pointer"
           >
-            <Box h={"210px"} bg={"gray.100"} mt={-6} mx={-6} mb="100px">
-              <Image
-                src={
-                  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                }
-                layout={"fill"}
-              />
-            </Box>
-            <Stack>
-              <Text
-                color={"green.500"}
-                textTransform={"uppercase"}
-                fontWeight={800}
-                fontSize={"sm"}
-                letterSpacing={1.1}
-              >
-                Blog
-              </Text>
-              <Heading color="black" fontSize={"2xl"} fontFamily={"body"}>
-                Boost your conversion rate
-              </Heading>
-              <Text color={"gray.500"}>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum.
-              </Text>
-            </Stack>
-            <Stack mt={6} direction={"row"} spacing={4} align={"center"}>
-              <Avatar
-                src={"https://avatars0.githubusercontent.com/u/1164541?v=4"}
-                alt={"Author"}
-              />
-              <Stack direction={"column"} spacing={0} fontSize={"sm"}>
-                <Text fontWeight={600}>Achim Rolle</Text>
-                <Text color={"gray.500"}>Feb 08, 2021 · 6min read</Text>
-              </Stack>
+            {type}
+          </Tag>
+        ))}
+      </HStack>
+      <SimpleGrid columns={[1, 2, 3]} mt={8} spacing={8}>
+        {filterProjects(projects, filter).map((project) => (
+          <Box
+            key={project.name}
+            className="project-card"
+            borderWidth="1px"
+            borderColor="gray.200"
+            rounded="lg"
+            p={4}
+            shadow="md"
+            borderRadius="xl"
+          >
+            <Image
+              src={project.image}
+              alt={project.name}
+              width="100%"
+              height={64}
+              objectFit="cover"
+              borderRadius="lg"
+              shadow="lg"
+            />
+            <Heading as="h3" size="lg" mt={4} color="teal.600" >
+              {project.name}
+            </Heading>
+            <Text fontSize="md" mt={2}color="gray.600">
+              {project.description}
+            </Text>
+            <Stack isInline spacing={4} my={4}>
+              {project.types.map((type) => (
+                <Tag
+
+                  key={type}
+                  colorScheme="teal"
+                  borderRadius="full"
+                  size="md"
+                  px={{ base: 4, md: 4 }}
+                  variant="solid"
+                  shadow="md"
+                >
+                  {type}
+                </Tag>
+              ))}
             </Stack>
           </Box>
-        </WrapItem>
-      </Wrap>
+        ))}
+      </SimpleGrid>
     </Container>
   );
 }

@@ -17,6 +17,7 @@ ReactDOM.render(
     <Header/>
     <Skills/>
     <Services/>
+    <Projects/>
     <Contact/>
     <Footer/>
   </ChakraProvider>,
