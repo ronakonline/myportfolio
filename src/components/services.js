@@ -33,15 +33,18 @@ export default function Services() {
     "Automation"
   ];
   return (
-   
-      <Container
-        id="services"
+    <Container
+      maxW="100vw"
+      id="services"
         className="service-container"
-        maxW="100vw"
+    >
+      <Container
+        className="service-container"
+        maxW="container.xl"
         
       >
         <Box position="relative" zIndex="1">
-        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} pt={8} px={8}>
+        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} pt={8} px={4}>
         <Text
           as={"span"}
           position={"relative"}
@@ -143,6 +146,6 @@ export default function Services() {
           
         </Wrap>
       </Container>
-    
+    </Container>
   );
 }
