@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import {
   Box,
   Flex,
@@ -6,18 +5,14 @@ import {
   Link,
   IconButton,
   useDisclosure,
-  useColorModeValue,
   Stack,
-  Button,
-  useColorMode,
-  Text,
+  Text
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 
 export default function Simple() {
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [activeLink, setActiveLink] = useState("Home");
   const Links = ["Home", "Skills", "Services", "Work", "Contact"];
@@ -38,7 +33,7 @@ export default function Simple() {
         rounded={"md"}
         _hover={{
           textDecoration: "underline",
-          color: "teal.400",
+          color: "teal.400"
         }}
         href={"#"}
         color={activeLink === children ? "teal.400" : null}
@@ -51,8 +46,15 @@ export default function Simple() {
   );
   return (
     <>
-      <Box bg="#0C0C0C" px={4} as="header" position="fixed" zIndex={1} w="100vw" >
-        <Flex h={16} alignItems={"center"}  justifyContent={"space-between"}>
+      <Box
+        bg="#0C0C0C"
+        px={4}
+        as="header"
+        position="fixed"
+        zIndex={1}
+        w="100vw"
+      >
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}

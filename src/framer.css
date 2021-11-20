@@ -138,19 +138,5 @@
     background: #fff;
   }
   
-  .add-item {
-    width: 30px;
-    height: 30px;
-    background: #eee;
-    border-radius: 50%;
-    border: 0;
-    cursor: pointer;
-    align-self: center;
-  }
   
-  .add-item:disabled {
-    opacity: 0.4;
-    cursor: default;
-    pointer-events: none;
-  }
   

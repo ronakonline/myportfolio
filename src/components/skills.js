@@ -2,7 +2,7 @@ import "../framer.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { initialTabs as tabs } from "./ingredients";
-import { Grid, Box, Container, SimpleGrid } from "@chakra-ui/layout";
+import { Box, Container, SimpleGrid } from "@chakra-ui/layout";
 import { Tooltip, Text, useBreakpointValue, Heading, Image } from "@chakra-ui/react";
 
 export default function App() {

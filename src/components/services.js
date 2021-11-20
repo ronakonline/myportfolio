@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Container,
   Heading,
@@ -73,7 +72,7 @@ export default function Services() {
                 overflow="hidden"
                 maxW="xs"
                 bgColor="white"
-                mx={[5, 5, 16]}
+                mx={[0, 5, 8]}
                 mt={10}
                 p={[5, 5, 10]}
                 minW="xs"
@@ -99,7 +98,7 @@ export default function Services() {
                 overflow="hidden"
                 maxW="xs"
                 bgColor="white"
-                mx={[5, 5, 16]}
+                mx={[0, 5, 8]}
                 mt={10}
                 p={[5, 5, 10]}
                 minW="xs"
@@ -125,7 +124,7 @@ export default function Services() {
                 overflow="hidden"
                 maxW="xs"
                 bgColor="white"
-                mx={[5, 5, 16]}
+                mx={[0, 5, 8]}
                 mt={10}
                 p={[5, 5, 10]}
                 minW="xs"

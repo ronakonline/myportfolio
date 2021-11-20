@@ -1,4 +1,3 @@
-import testimg from "../headerimg.png";
 import html from "../skills-images/html.png";
 import css from "../skills-images/css.png";
 import bootstrap from "../skills-images/bootstrap.png";

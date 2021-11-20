@@ -1,4 +1,3 @@
-import React from "react";
 import {
   chakra,
   Box,
@@ -41,9 +40,6 @@ const Header = () => {
           position="relative"
         >
           <Box
-            // position="absolute"
-            // bottom="220px"
-            // left={2}
             display={["none", "none", "none", "block"]}
             className="child1"
           >

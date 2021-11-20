@@ -15,7 +15,8 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Textarea
+  Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import {
   MdPhone,
@@ -26,14 +27,7 @@ import {
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
 import { useState,useRef } from "react";
-import axios from "axios";
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-  useToast
-} from "@chakra-ui/react";
+import axios from "axios";;
 
 export default function Contact() {
   const [name, setName] = useState("");
