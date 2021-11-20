@@ -19,8 +19,18 @@ import "./services.css";
 export default function Services() {
   const services = [
     "Website Development",
-    "App Development",
-    "CMS Development",
+    "Web App Development",
+    "CMS Development"
+  ];
+  const services1 = [
+    "Native Application",
+    "Hybrid Application",
+    "PWA Application"
+  ];
+  const services2 = [
+    "Ecommerce Website",
+    "API Development",
+    "Automation"
   ];
   return (
     <>
@@ -61,6 +71,7 @@ export default function Services() {
                 ml={[5, 5, 16]}
                 mt={10}
                 p={[5, 5, 10]}
+                minW="sm"
               >
                 <List className="inner-element">
                   {services.map((service, index) => (
@@ -86,9 +97,10 @@ export default function Services() {
                 ml={[5, 5, 16]}
                 mt={10}
                 p={[5, 5, 10]}
+                minW="sm"
               >
                 <List className="inner-element">
-                  {services.map((service, index) => (
+                  {services1.map((service, index) => (
                     <ListItem key={index}>
                       <ListIcon as={MdCheckCircle} color="#212842" />
                       <Text color="#212842" fontSize="20px" as="b">
@@ -111,9 +123,10 @@ export default function Services() {
                 ml={[5, 5, 16]}
                 mt={10}
                 p={[5, 5, 10]}
+                minW="sm"
               >
                 <List className="inner-element">
-                  {services.map((service, index) => (
+                  {services2.map((service, index) => (
                     <ListItem key={index}>
                       <ListIcon as={MdCheckCircle} color="#212842" />
                       <Text color="#212842" fontSize="20px" as="b">

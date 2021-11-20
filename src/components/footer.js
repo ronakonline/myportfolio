@@ -56,7 +56,7 @@ import {
           spacing={4}
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
-          <Text>© 2020 All rights reserved</Text>
+          <Text>© {new Date().getFullYear()} All rights reserved</Text>
           <Text>Made with ❤️ by Ronak Pareek</Text> 
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} href={'#'}>

@@ -55,23 +55,7 @@ export default function contact() {
       </Box>
 
     
-      <Box
-        position="absolute"
-        translateX="50%"
-        translateY="50%"
-        bottom="12%"
-        left="23%"
-        display={["none", "none", "none", "block"]}
-      >
-        <lottie-player
-          src="https://assets1.lottiefiles.com/packages/lf20_rvqjxeql.json"
-          background="transparent"
-          speed="1"
-          style={{ height: "250px", width: "250px" }}
-          loop
-          autoplay
-        ></lottie-player>
-      </Box>
+     
       <Flex>
         <Box
           bg="#02054B"
@@ -93,7 +77,7 @@ export default function contact() {
                       <Button
                         size="md"
                         height="48px"
-                        width="200px"
+                        width="210px"
                         variant="ghost"
                         color="#DCE2FF"
                         _hover={{ border: "2px solid #1C6FEB" }}
@@ -124,6 +108,23 @@ export default function contact() {
                         Karnavati, India
                       </Button>
                     </VStack>
+                  </Box>
+                   <Box
+                    position="absolute"
+                    translateX="50%"
+                    translateY="50%"
+                    bottom="12%"
+                    
+                    // display={["none", "none", "none", "block"]}
+                  >
+                    <lottie-player
+                      src="https://assets1.lottiefiles.com/packages/lf20_rvqjxeql.json"
+                      background="transparent"
+                      speed="1"
+                      style={{ height: "250px", width: "250px" }}
+                      loop
+                      autoplay
+                    ></lottie-player>
                   </Box>
                   <HStack
                     mt={[0, 0, 10]}
