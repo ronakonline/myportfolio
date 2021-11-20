@@ -15,19 +15,71 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Textarea,
+  Textarea
 } from "@chakra-ui/react";
 import {
   MdPhone,
   MdEmail,
   MdLocationOn,
   MdFacebook,
-  MdOutlineEmail,
+  MdOutlineEmail
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
-import { Link,Router } from "react-router-dom";
+import { useState,useRef } from "react";
+import axios from "axios";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  useToast
+} from "@chakra-ui/react";
 
-export default function contact() {
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const toast = useToast()
+  const toastIdRef = useRef()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email, message);
+    const data = {
+      name,
+      email,
+      message
+    };
+
+    toast({
+      title: "Sending...",
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+      id: toastIdRef.current
+      });
+
+    axios
+      .post("http://localhost:3000/api/v1", data)
+      .then((res) => {
+       
+         toast({
+          title: "Message Sent",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+          id: toastIdRef.current
+          });
+          
+     
+      })
+      .catch(() => {
+        console.log("Message not sent");
+      });
+  };
+
   return (
     <Container
       id="contact"
@@ -54,8 +106,6 @@ export default function contact() {
         ></lottie-player>
       </Box>
 
-    
-     
       <Flex>
         <Box
           bg="#02054B"
@@ -109,12 +159,12 @@ export default function contact() {
                       </Button>
                     </VStack>
                   </Box>
-                   <Box
+                  <Box
                     position="absolute"
                     translateX="50%"
                     translateY="50%"
                     bottom="12%"
-                    
+
                     // display={["none", "none", "none", "block"]}
                   >
                     <lottie-player
@@ -139,7 +189,12 @@ export default function contact() {
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<MdFacebook size="28px" />}
-                      onClick={event =>  window.open("https://www.facebook.com/Roonnaakk/", '_blank') }
+                      onClick={(event) =>
+                        window.open(
+                          "https://www.facebook.com/Roonnaakk/",
+                          "_blank"
+                        )
+                      }
                     />
                     <IconButton
                       aria-label="github"
@@ -148,7 +203,9 @@ export default function contact() {
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsGithub size="28px" />}
-                      onClick={event =>  window.open("https://github.com/ronakonline", '_blank') }
+                      onClick={(event) =>
+                        window.open("https://github.com/ronakonline", "_blank")
+                      }
                     />
                     <IconButton
                       aria-label="discord"
@@ -157,7 +214,12 @@ export default function contact() {
                       isRound={true}
                       _hover={{ bg: "#0D74FF" }}
                       icon={<BsDiscord size="28px" />}
-                      onClick={event =>  window.open("https://discordapp.com/users/404316876999622656", '_blank') }
+                      onClick={(event) =>
+                        window.open(
+                          "https://discordapp.com/users/404316876999622656",
+                          "_blank"
+                        )
+                      }
                     />
                   </HStack>
                 </Box>
@@ -165,42 +227,55 @@ export default function contact() {
               <WrapItem>
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
-                    <VStack spacing={5}>
-                      <FormControl id="name">
-                        <FormLabel>Your Name</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<BsPerson color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="name">
-                        <FormLabel>Mail</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement
-                            pointerEvents="none"
-                            children={<MdOutlineEmail color="gray.800" />}
-                          />
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="name">
-                        <FormLabel>Message</FormLabel>
-                        <Textarea></Textarea>
-                      </FormControl>
-                      <FormControl id="name" float="right">
-                        <Button
-                          variant="solid"
-                          bg="#0D74FF"
-                          color="white"
-                          _hover={{}}
-                        >
-                          Send Message
-                        </Button>
-                      </FormControl>
-                    </VStack>
+                    <form onSubmit={handleSubmit}>
+                      <VStack spacing={5}>
+                        <FormControl id="name">
+                          <FormLabel>Your Name</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<BsPerson color="gray.800" />}
+                            />
+                            <Input
+                              type="text"
+                              size="md"
+                              onChange={(e) => setName(e.target.value)}
+                            />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id="name">
+                          <FormLabel>Mail</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement
+                              pointerEvents="none"
+                              children={<MdOutlineEmail color="gray.800" />}
+                            />
+                            <Input
+                              type="email"
+                              size="md"
+                              onChange={(e) => setEmail(e.target.value)}
+                            />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id="name">
+                          <FormLabel>Message</FormLabel>
+                          <Textarea
+                            onChange={(e) => setMessage(e.target.value)}
+                          ></Textarea>
+                        </FormControl>
+                        <FormControl id="name" float="right">
+                          <Button
+                            variant="solid"
+                            bg="#0D74FF"
+                            color="white"
+                            _hover={{}}
+                            type="submit"
+                          >
+                            Send Message
+                          </Button>
+                        </FormControl>
+                      </VStack>
+                    </form>
                   </Box>
                 </Box>
               </WrapItem>
