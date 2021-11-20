@@ -61,7 +61,7 @@ export default function Contact() {
       });
 
     axios
-      .post("http://localhost:3000/api/v1", data)
+      .post("https://contact-form-serverless.onrender.com/api/v1", data)
       .then((res) => {
        
          toast({
@@ -72,7 +72,7 @@ export default function Contact() {
           position: "top",
           id: toastIdRef.current
           });
-          
+
      
       })
       .catch(() => {
