@@ -51,7 +51,7 @@ export default function Simple() {
   );
   return (
     <>
-      <Box bg="#0C0C0C" px={4} as="header" position="fixed" zIndex={1} w="100%" >
+      <Box bg="#0C0C0C" px={4} as="header" position="fixed" zIndex={1} w="100vw" >
         <Flex h={16} alignItems={"center"}  justifyContent={"space-between"}>
           <IconButton
             size={"md"}

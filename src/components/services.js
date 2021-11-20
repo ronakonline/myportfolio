@@ -19,7 +19,7 @@ import "./services.css";
 export default function Services() {
   const services = [
     "Website Development",
-    "Web App Development",
+    "WebApp Development",
     "CMS Development"
   ];
   const services1 = [
@@ -33,14 +33,15 @@ export default function Services() {
     "Automation"
   ];
   return (
-    <>
+   
       <Container
         id="services"
         className="service-container"
-        px={{"base":0,"lg":16}}
-        maxWidth="100%"
+        maxW="100vw"
+        
       >
-            <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} pt={8}>
+        <Box position="relative" zIndex="1">
+        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mt={2} pt={8} px={8}>
         <Text
           as={"span"}
           position={"relative"}
@@ -52,13 +53,14 @@ export default function Services() {
             position: "absolute",
             bottom: 1,
             left: 0,
-            bg: "white",
+            bg: "teal.400",
             zIndex: -1,
           }}
         >
           Services
         </Text>
       </Heading>
+      </Box>
         <Wrap display="flex" justify="center">
           <WrapItem>
             <Tilt perspective={500} className="parallax-effect">
@@ -66,12 +68,12 @@ export default function Services() {
                 borderRadius="md"
                 boxShadow="xlg"
                 overflow="hidden"
-                maxW="sm"
+                maxW="xs"
                 bgColor="white"
-                ml={[5, 5, 16]}
+                mx={[5, 5, 16]}
                 mt={10}
                 p={[5, 5, 10]}
-                minW="sm"
+                minW="xs"
               >
                 <List className="inner-element">
                   {services.map((service, index) => (
@@ -92,12 +94,12 @@ export default function Services() {
                 borderRadius="md"
                 boxShadow="xlg"
                 overflow="hidden"
-                maxW="sm"
+                maxW="xs"
                 bgColor="white"
-                ml={[5, 5, 16]}
+                mx={[5, 5, 16]}
                 mt={10}
                 p={[5, 5, 10]}
-                minW="sm"
+                minW="xs"
               >
                 <List className="inner-element">
                   {services1.map((service, index) => (
@@ -118,12 +120,12 @@ export default function Services() {
                 borderRadius="md"
                 boxShadow="xlg"
                 overflow="hidden"
-                maxW="sm"
+                maxW="xs"
                 bgColor="white"
-                ml={[5, 5, 16]}
+                mx={[5, 5, 16]}
                 mt={10}
                 p={[5, 5, 10]}
-                minW="sm"
+                minW="xs"
               >
                 <List className="inner-element">
                   {services2.map((service, index) => (
@@ -141,6 +143,6 @@ export default function Services() {
           
         </Wrap>
       </Container>
-    </>
+    
   );
 }
